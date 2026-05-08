@@ -19,6 +19,7 @@ export default function HomePage() {
         <About
           heading={portfolioContent.aboutHeading}
           body={portfolioContent.aboutBody}
+          highlights={portfolioContent.aboutHighlights}
           tools={portfolioContent.tools}
         />
         <Contact

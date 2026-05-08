@@ -2,9 +2,11 @@ export type ProjectEntry = {
   title: string;
   category: string;
   role: string;
+  cardLabel: string;
   summary: string;
   outcome: string;
   tags: string[];
+  imageAlt: string;
 };
 
 export type PrincipleEntry = {
@@ -17,17 +19,38 @@ export type LinkEntry = {
   href: string;
 };
 
+export type HeroStatEntry = {
+  value: string;
+  label: string;
+};
+
+export type HeroMediaEntry = {
+  alt: string;
+  eyebrow: string;
+  title: string;
+  caption: string;
+};
+
+export type AboutHighlightEntry = {
+  label: string;
+  value: string;
+};
+
 export type PortfolioContent = {
   name: string;
   status: string;
   heroTitle: string;
   intro: string;
+  focusLabels: string[];
+  heroStats: HeroStatEntry[];
+  heroMedia: HeroMediaEntry;
   ctas: LinkEntry[];
   featuredHeading: string;
   projects: ProjectEntry[];
   principles: PrincipleEntry[];
   aboutHeading: string;
   aboutBody: string;
+  aboutHighlights: AboutHighlightEntry[];
   tools: string[];
   contactHeading: string;
   contactBody: string;
@@ -36,10 +59,31 @@ export type PortfolioContent = {
 
 export const portfolioContent: PortfolioContent = {
   name: "Nikhil R",
-  status: "UI/UX Designer + Game Designer",
-  heroTitle: "Designing interfaces, systems, and play that feel sharp under pressure.",
+  status: "Available for selected collaborations",
+  heroTitle: "I design product interface systems that read instantly and feel cinematic in motion.",
   intro:
-    "I build product experiences and game concepts with a systems-first mindset, balancing clarity, pacing, and emotional payoff across every interaction.",
+    "My work centers UI/UX first: dashboards, product journeys, and visual systems shaped to stay precise under pressure, with game design informing pacing, feedback, and tension.",
+  focusLabels: ["Product Interface Systems", "Experience Systems", "Game Design Depth"],
+  heroStats: [
+    {
+      value: "03",
+      label: "Launches"
+    },
+    {
+      value: "08",
+      label: "Interface studies"
+    },
+    {
+      value: "2D/3D",
+      label: "Prototype range"
+    }
+  ],
+  heroMedia: {
+    alt: "Layered UI concept board showing dashboard cards and motion studies",
+    eyebrow: "Visual Lab",
+    title: "Signal Desk",
+    caption: "Chrome-blue interface studies built for scanning, coordination, and decision speed."
+  },
   ctas: [
     {
       label: "View Work",
@@ -53,31 +97,37 @@ export const portfolioContent: PortfolioContent = {
   featuredHeading: "Featured Work",
   projects: [
     {
-      title: "Operations Dashboard Concept",
-      category: "UI/UX",
+      title: "Signal Desk",
+      category: "UI/UX Systems",
       role: "Lead Product Designer",
+      cardLabel: "Control room redesign",
       summary:
-        "A dense monitoring and decision-making interface shaped for speed, scanability, and confident operator action.",
-      outcome: "Focused on information hierarchy, alert handling, and smoother high-stakes workflows.",
-      tags: ["Design Systems", "Dashboards", "Interaction Flows"]
+        "An image-led operations dashboard concept tuned for legibility, escalation handling, and rapid team response.",
+      outcome: "Focused on information hierarchy, motion cues, and confident high-stakes workflows.",
+      tags: ["Experience Systems", "Dashboards", "Interaction Flows"],
+      imageAlt: "Signal Desk preview"
     },
     {
-      title: "Tactical Exploration Game Pitch",
+      title: "Hinterland Loop",
       category: "Game Design",
       role: "Game Designer",
+      cardLabel: "Mission systems pitch",
       summary:
-        "A mission-driven concept combining navigation tension, environmental storytelling, and layered player choice.",
+        "A mission-driven game pitch combining navigation tension, environmental storytelling, and layered player choice.",
       outcome: "Built around encounter pacing, progression loops, and readable systemic feedback.",
-      tags: ["Systems Design", "Level Concepts", "Moment-to-Moment Play"]
+      tags: ["Systems Design", "Level Concepts", "Moment-to-Moment Play"],
+      imageAlt: "Hinterland Loop preview"
     },
     {
-      title: "Mobile Feature Redesign Sprint",
-      category: "UI/UX",
+      title: "Pulse Commerce",
+      category: "UI/UX Systems",
       role: "UX Designer",
+      cardLabel: "Mobile commerce sprint",
       summary:
-        "A lean redesign pass for a cluttered mobile workflow, rebuilt to improve task completion and reduce hesitation.",
+        "A lean mobile redesign sprint rebuilt to improve task completion, lower hesitation, and keep the visual hierarchy crisp.",
       outcome: "Clarified primary actions, simplified decision points, and tightened visual rhythm.",
-      tags: ["Mobile UX", "Flow Simplification", "Usability"]
+      tags: ["Mobile UX", "Flow Simplification", "UI Refresh"],
+      imageAlt: "Pulse Commerce preview"
     }
   ],
   principles: [
@@ -99,19 +149,30 @@ export const portfolioContent: PortfolioContent = {
   ],
   aboutHeading: "About",
   aboutBody:
-    "I am a designer interested in the overlap between product clarity and game feel. My work focuses on interaction systems, interface structure, and the moment-to-moment decisions that shape user and player experience.",
+    "I am a UI/UX designer focused on interaction systems, visual structure, and interface pacing. Game design remains part of my toolkit, but product clarity, momentum, and emotional readability lead the work.",
+  aboutHighlights: [
+    {
+      label: "Primary lane",
+      value: "UI/UX direction"
+    },
+    {
+      label: "Supporting lens",
+      value: "Game systems thinking"
+    }
+  ],
   tools: [
     "Figma",
     "Framer",
+    "03 Launches",
     "Illustrator",
     "Blender",
     "Unity",
     "Unreal Engine",
     "Prototype Scripting"
   ],
-  contactHeading: "Let's Build Something Sharp",
+  contactHeading: "Start a Sharp Interface Conversation",
   contactBody:
-    "I am open to UI/UX, game design, and collaborative concept work. If you are building something interactive, I would like to hear about it.",
+    "Available for UI/UX design, product direction, and visual systems work. If you are shaping something interactive and need a clearer interface point of view, reach out.",
   contactLinks: [
     {
       label: "Email",
