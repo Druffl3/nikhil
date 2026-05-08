@@ -1,0 +1,26 @@
+import type { LinkEntry } from "@/src/content/portfolio";
+
+type ContactProps = {
+  heading: string;
+  body: string;
+  links: LinkEntry[];
+};
+
+export function Contact({ heading, body, links }: ContactProps) {
+  return (
+    <section className="contact-panel" id="contact" aria-labelledby="contact-title">
+      <div className="section-heading">
+        <p className="section-kicker">Contact</p>
+        <h2 id="contact-title">{heading}</h2>
+      </div>
+      <p className="contact-copy">{body}</p>
+      <div className="contact-links">
+        {links.map((link) => (
+          <a key={link.label} className="contact-link" href={link.href} target="_blank" rel="noreferrer">
+            {link.label}
+          </a>
+        ))}
+      </div>
+    </section>
+  );
+}
